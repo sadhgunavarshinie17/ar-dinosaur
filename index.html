@@ -181,7 +181,7 @@
 
         <model-viewer
             id="dinosaur"
-            src="./TRex.glb"
+            src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Fox/glTF-Binary/Fox.glb"
             alt="3D Dinosaur Model"
             auto-rotate
             camera-controls
@@ -193,15 +193,15 @@
             min-camera-orbit="auto auto 1m"
             max-camera-orbit="auto auto 10m">
             
-            <button slot="ar-button" class="ar-button" id="arButton">
-                📱 View in AR
-            </button>
-
             <div class="note" slot="progress-bar">
                 <strong>Loading 3D Model...</strong>
                 Please wait while the dinosaur loads.
             </div>
         </model-viewer>
+        
+        <button class="ar-button" id="arButton">
+            📱 View in AR
+        </button>
 
         <div class="info">
             <h2>How to Use</h2>
@@ -243,23 +243,41 @@
         const arButton = document.querySelector('#arButton');
         let isRotating = true;
 
-        // Check AR support
-        modelViewer.addEventListener('load', () => {
-            console.log('Model loaded successfully!');
+        // AR Button Click Handler
+        arButton.addEventListener('click', () => {
+            console.log('AR button clicked!');
             
-            // Check if AR is available
             if (modelViewer.canActivateAR) {
-                console.log('AR is available on this device!');
-                arButton.textContent = '📱 View in AR';
+                console.log('Activating AR...');
+                modelViewer.activateAR();
             } else {
-                console.log('AR not available, showing 3D only');
-                arButton.textContent = '⚠️ AR Not Available (3D Only)';
-                arButton.style.background = '#ffc107';
+                console.log('AR not available');
+                alert('AR is not available on this device.\n\nMake sure you are using:\n- Chrome on Android with ARCore\n- Safari on iOS 12+');
             }
         });
 
+        // Check AR support on load
+        modelViewer.addEventListener('load', () => {
+            console.log('Model loaded successfully!');
+            console.log('Can activate AR:', modelViewer.canActivateAR);
+            
+            if (modelViewer.canActivateAR) {
+                arButton.textContent = '📱 View in AR';
+                arButton.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                console.log('AR is available!');
+            } else {
+                arButton.textContent = '⚠️ AR Not Available';
+                arButton.style.background = '#ffc107';
+                console.log('AR not supported on this device');
+            }
+        });
+
+        // AR Status logging
         modelViewer.addEventListener('ar-status', (event) => {
             console.log('AR Status:', event.detail.status);
+            if (event.detail.status === 'failed') {
+                alert('AR failed to start. Your device may not support AR.');
+            }
         });
 
         // Reset camera view
@@ -286,10 +304,15 @@
             alert('Failed to load 3D model. Please check the file path!');
         });
 
-        // Log when AR session starts
+        // Log when AR tracking starts
         modelViewer.addEventListener('ar-tracking', (event) => {
             console.log('AR tracking started!');
         });
+
+        // Show button after a delay if model is slow to load
+        setTimeout(() => {
+            arButton.style.display = 'block';
+        }, 1000);
     </script>
 </body>
 </html>
