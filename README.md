@@ -1,7 +1,7 @@
 # AR Dinosaur Viewer  
 ### View a 3D T-Rex Model in the Browser and in Augmented Reality
 
-This project is a simple Web-based 3D + AR experience using **Google's <model-viewer> library**.  
+This project is a simple Web-based 3D + AR experience using **Google's model-viewer library**.  
 It allows you to:
 
 - Rotate and zoom a 3D dinosaur model inside the webpage  
@@ -10,7 +10,7 @@ It allows you to:
 - Load your own .glb 3D models
 
 This is a beginner-friendly AR project — no Unity, no ARKit/ARCore coding.  
-Just HTML + JS + <model-viewer>.
+Just HTML + JS + model-viewer.
 
 
 ## What This Project Does
@@ -29,7 +29,7 @@ This webpage:
 
 ## Technologies Used
 
-### <model-viewer> (Google)  
+### model-viewer (Google)  
 This is a web component that makes 3D & AR extremely easy.  
 It handles:
 
@@ -105,7 +105,7 @@ project/<br>
 └── assets/ → (optional)<br>
 
 
-## How <model-viewer> Works in This Project
+## How model-viewer Works in This Project
 
 Example:
 
@@ -121,7 +121,7 @@ html
 ```
 
 
-## What <model-viewer> Gives You
+## What model-viewer Gives You
 
 - 3D rendering  
 - Orbit controls  
