@@ -87,7 +87,7 @@ Use **HTTPS** for AR support.
 ### **Android**
 - Chrome  
 - ARCore-compatible device  
-- `.glb` loads in WebXR mode
+- .glb loads in WebXR mode
 
 ### **iOS**
 - Safari  
@@ -109,14 +109,16 @@ project/
 
 Example:
 
-```html
+```
+html
 <model-viewer
     src="./TRex.glb"
     auto-rotate
     camera-controls
     ar
     ar-modes="webxr scene-viewer quick-look"
-></model-viewer>```
+></model-viewer>
+```
 
 
 ## What <model-viewer> Gives You
