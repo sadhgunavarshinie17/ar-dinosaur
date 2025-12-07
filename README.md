@@ -1,23 +1,23 @@
 # AR Dinosaur Viewer  
 ### View a 3D T-Rex Model in the Browser and in Augmented Reality
 
-This project is a simple Web-based 3D + AR experience using **Google's `<model-viewer>` library**.  
+This project is a simple Web-based 3D + AR experience using **Google's <model-viewer> library**.  
 It allows you to:
 
 - Rotate and zoom a 3D dinosaur model inside the webpage  
 - Press a button to view the dinosaur in **Augmented Reality (AR)** on supported devices  
 - Reset camera, toggle rotation, view instructions  
-- Load your own `.glb` 3D models
+- Load your own .glb 3D models
 
 This is a beginner-friendly AR project — no Unity, no ARKit/ARCore coding.  
-Just HTML + JS + `<model-viewer>`.
+Just HTML + JS + <model-viewer>.
 
 
 ## What This Project Does
 
 This webpage:
 
-1. Loads a **T-Rex `.glb` file** into a 3D viewer.  
+1. Loads a **T-Rex .glb file** into a 3D viewer.  
 2. Lets the user rotate, zoom, and interact with the 3D model.  
 3. Detects if the user’s phone supports WebXR / ARCore / ARKit.  
 4. If supported → allows launching AR via the **“View in AR”** button.  
@@ -29,7 +29,7 @@ This webpage:
 
 ## Technologies Used
 
-### `<model-viewer>` (Google)  
+### <model-viewer> (Google)  
 This is a web component that makes 3D & AR extremely easy.  
 It handles:
 
@@ -93,7 +93,7 @@ Use **HTTPS** for AR support.
 - Safari  
 - iOS 12+  
 - QuickLook support  
-(`<model-viewer>` auto-converts the model for AR)
+  (<model-viewer> auto-converts the model for AR)
 
 If unsupported → the button shows **“AR Not Available”**.
 
@@ -105,7 +105,7 @@ project/
 └── assets/ → (optional)
 
 
-## How `<model-viewer>` Works in This Project
+## How <model-viewer> Works in This Project
 
 Example:
 
@@ -116,16 +116,16 @@ Example:
     camera-controls
     ar
     ar-modes="webxr scene-viewer quick-look"
-></model-viewer>
+></model-viewer>```
 
 
-## What `<model-viewer>` Gives You
+## What <model-viewer> Gives You
 
 - 3D rendering  
 - Orbit controls  
-- ✔ AR button  
-- ✔ WebXR + QuickLook support  
-- ✔ Shadows & lighting  
+- AR button  
+- WebXR + QuickLook support  
+- Shadows & lighting  
 
 
 ## JavaScript Controls Explained
@@ -139,12 +139,12 @@ modelViewer.cameraOrbit = '0deg 75deg 2.5m';
 Adds or removes the `auto-rotate` attribute.
 
 ### **Error Handling**
-Alerts the user if the `.glb` file path is incorrect or if AR activation fails.
+Alerts the user if the .glb file path is incorrect or if AR activation fails.
 
 
 ## Customizing the Model
 
-### **Replace the `.glb` file**
+### **Replace the .glb file**
 ```
 TRex.glb → myModel.glb
 ```
