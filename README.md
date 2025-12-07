@@ -1,4 +1,4 @@
-# 🦖 AR Dinosaur Viewer  
+# AR Dinosaur Viewer  
 ### View a 3D T-Rex Model in the Browser and in Augmented Reality
 
 This project is a simple Web-based 3D + AR experience using **Google's `<model-viewer>` library**.  
@@ -12,9 +12,8 @@ It allows you to:
 This is a beginner-friendly AR project — no Unity, no ARKit/ARCore coding.  
 Just HTML + JS + `<model-viewer>`.
 
----
 
-## 📌 What This Project Does
+## What This Project Does
 
 This webpage:
 
@@ -27,11 +26,10 @@ This webpage:
    - Reset View  
    - Toggle Auto-Rotation  
 
----
 
-## 🧰 Technologies Used
+## Technologies Used
 
-### ✔ `<model-viewer>` (Google)  
+### `<model-viewer>` (Google)  
 This is a web component that makes 3D & AR extremely easy.  
 It handles:
 
@@ -41,10 +39,10 @@ It handles:
 - AR launching  
 - ARCore / ARKit compatibility
 
-### ✔ HTML + CSS  
+### HTML + CSS  
 Used for layout, design, and responsiveness.
 
-### ✔ JavaScript  
+### JavaScript  
 Used to:
 
 - Detect AR support  
@@ -53,17 +51,15 @@ Used to:
 - Toggle rotation  
 - Handle errors  
 
----
 
-## 🚀 How to Run This Project
+## How to Run This Project
 
 ### **Method 1: Open locally**
 You can open `index.html` directly, but:
 
-⚠️ **AR will NOT work from a local file path.**  
+**AR will NOT work from a local file path.**  
 AR needs a **web server**.
 
----
 
 ### **Method 2: Run using VS Code + Live Server (Recommended)**
 
@@ -74,7 +70,6 @@ AR needs a **web server**.
 
 This allows full WebXR AR functionality.
 
----
 
 ### **Method 3: Upload Online**
 Host the project on:
@@ -86,9 +81,8 @@ Host the project on:
 
 Use **HTTPS** for AR support.
 
----
 
-## 📱 AR Support Requirements
+## AR Support Requirements
 
 ### **Android**
 - Chrome  
@@ -103,7 +97,86 @@ Use **HTTPS** for AR support.
 
 If unsupported → the button shows **“AR Not Available”**.
 
----
 
-## 📁 File Structure
+## File Structure
+project/
+│ index.html → Main webpage
+│ TRex.glb → 3D model (replace with your own)
+└── assets/ → (optional)
 
+
+## How `<model-viewer>` Works in This Project
+
+Example:
+
+```html
+<model-viewer
+    src="./TRex.glb"
+    auto-rotate
+    camera-controls
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+></model-viewer>
+
+
+## What `<model-viewer>` Gives You
+
+- 3D rendering  
+- Orbit controls  
+- ✔ AR button  
+- ✔ WebXR + QuickLook support  
+- ✔ Shadows & lighting  
+
+
+## JavaScript Controls Explained
+
+### **Reset Camera**
+```js
+modelViewer.cameraOrbit = '0deg 75deg 2.5m';
+```
+
+### **Toggle Rotation**
+Adds or removes the `auto-rotate` attribute.
+
+### **Error Handling**
+Alerts the user if the `.glb` file path is incorrect or if AR activation fails.
+
+
+## Customizing the Model
+
+### **Replace the `.glb` file**
+```
+TRex.glb → myModel.glb
+```
+
+### **Update the viewer code**
+```html
+src="./myModel.glb"
+alt="My 3D Model"
+```
+
+### **You can load any 3D model type**
+- Buildings  
+- Characters  
+- Cars  
+- Your own 3D creations  
+
+
+## Future Improvements
+
+- Add animation controls  
+- Add model selector  
+- Add custom lighting  
+- Add AR placement anchors  
+- Add multiple models in one scene  
+
+
+## Summary
+
+This project is a simple introduction to Web-based AR:
+
+- No Unity  
+- No native apps  
+- Runs directly in the browser  
+- Works on most phones  
+- Perfect for demos, product previews, and AR learning  
