@@ -99,10 +99,10 @@ If unsupported → the button shows **“AR Not Available”**.
 
 
 ## File Structure
-project/
-│ index.html → Main webpage
-│ TRex.glb → 3D model (replace with your own)
-└── assets/ → (optional)
+project/<br>
+│ index.html → Main webpage<br>
+│ TRex.glb → 3D model (replace with your own)<br>
+└── assets/ → (optional)<br>
 
 
 ## How <model-viewer> Works in This Project
